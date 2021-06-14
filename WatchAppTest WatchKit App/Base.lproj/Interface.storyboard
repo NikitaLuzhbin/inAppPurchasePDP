@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="18022"/>
+    </dependencies>
+    <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="WatchAppTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Pointless watch app to do some stuff" textAlignment="center" numberOfLines="0" id="gl8-nL-d4R"/>
+                    </items>
+                    <connections>
+                        <segue destination="mfU-J6-XKW" kind="relationship" relationship="nextPage" id="pPW-mp-01s"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="42" y="36"/>
+        </scene>
+        <!--Rick Roll Player Interface Controller-->
+        <scene sceneID="ad7-wm-k7f">
+            <objects>
+                <controller id="mfU-J6-XKW" customClass="RickRollPlayerInterfaceController" customModule="WatchAppTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Rickroll player" textAlignment="center" numberOfLines="0" id="C7E-A1-0fe">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </label>
+                        <group width="1" height="0.29999999999999999" alignment="center" verticalAlignment="center" id="JPT-g9-wip">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" backgroundImage="play.fill" catalog="system" id="qu7-RH-Kri">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="playButtonDidTapped" destination="mfU-J6-XKW" id="23D-S3-7L8"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" backgroundImage="pause.fill" catalog="system" id="akH-yz-msb">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="pauseButtonDidTapped" destination="mfU-J6-XKW" id="cPV-55-eiP"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" backgroundImage="arrow.clockwise" catalog="system" id="btk-Kq-AyU">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="reloadButttonDidTapped" destination="mfU-J6-XKW" id="7Cg-ZZ-7GC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="We5-Ps-LlH" kind="relationship" relationship="nextPage" id="LA9-zR-3vU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="280" y="36"/>
+        </scene>
+        <!--Micro Record Interface Controller-->
+        <scene sceneID="jNC-6e-HNv">
+            <objects>
+                <controller id="We5-Ps-LlH" customClass="MicroRecordInterfaceController" customModule="WatchAppTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Microfone Recorder" textAlignment="center" id="Eu0-0C-HNR"/>
+                        <group width="0.69999999999999996" alignment="center" layout="vertical" id="L5K-WI-b2s">
+                            <items>
+                                <button width="1" alignment="left" title="Record" id="xjT-Vm-pm6">
+                                    <connections>
+                                        <action selector="onRecordDidTapped" destination="We5-Ps-LlH" id="9we-4s-vu5"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Listen" id="akX-CY-a56">
+                                    <connections>
+                                        <action selector="onListenDidTapped" destination="We5-Ps-LlH" id="L15-Be-5ka"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="fVD-g2-zYD" kind="relationship" relationship="nextPage" id="IuQ-ks-buO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="546" y="36"/>
+        </scene>
+        <!--Table Interface Controller-->
+        <scene sceneID="dek-gg-XY4">
+            <objects>
+                <controller id="fVD-g2-zYD" customClass="TableInterfaceController" customModule="WatchAppTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Just table with some data" textAlignment="center" numberOfLines="0" id="gNk-8E-LSs"/>
+                        <table alignment="left" id="GbR-bT-LUO">
+                            <items>
+                                <tableRow identifier="cell" id="Sae-3N-3Z3" customClass="TableRow" customModule="WatchAppTest_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="WRJ-qT-z2A">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Some Text" id="YWC-n7-01L"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="textLabel" destination="YWC-n7-01L" id="sQp-PK-3u8"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="GbR-bT-LUO" id="YIw-fs-8jA"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="826" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="114" height="128"/>
+        <image name="pause.fill" catalog="system" width="119" height="128"/>
+        <image name="play.fill" catalog="system" width="115" height="128"/>
+    </resources>
+</document>
